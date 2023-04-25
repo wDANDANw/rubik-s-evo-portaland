@@ -1,0 +1,25 @@
+# Commentary
+This sprite will depict a cute 16x16 egg with four frames, each pointing to a different direction (south, east, west, and north). The egg will be designed to display a rainbow pattern, representing the player's collection of colors in the game. Each color index will correspond to one of the available 16 colors provided.
+
+# Basic Info
+width=16
+height=16
+
+# Frames
+# Frame 1 - South
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 1 1 1 1 1 1 0 0 0 0 0
+0 0 0 1 1 2 2 2 2 2 2 1 0 0 0 0
+0 0 1 2 2 3 3 3 3 3 3 2 1 0 0 0
+0 1 2 3 3 4 4 4 4 4 4 3 2 1 0 0
+1 2 3 4 4 5 5 5 5 5 5 4 3 2 1 0
+1 2 3 4 5 6 6 6 6 6 6 5 3 2 1 0
+1 2 3 4 5 6 7 7 7 7 6 5 3 2 1 0
+1 2 3 4 5 6 7 8 8 7 6 5 3 2 1 0
+1 2 3 4 5 6 6 7 7 6 6 5 3 2 1 0
+1 2 3 4 4 5 5 5 5 5 5 4 3 2 1 0
+0 1 2 3 3 4 4 4 4 4 4 3 2 1 0 0
+0 0 1 2 2 3 3 3 3 3 3 2 1 0 0 0
+0 0 0 1 1 2 2 2 2 2 2 1 0 0 0 0
+0 0 0 0 0 1 1 1 1 1 1 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0

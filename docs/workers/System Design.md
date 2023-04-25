@@ -14,6 +14,7 @@ This detailed and comprehensive description of the game's systems, components, a
 **Expected Classes / Instances / Entities**:
 
 - `GameState` (Singleton Class)
+- `Item` (Abstract Class)
 
 **APIs / Signatures / Interfaces**:
 
@@ -22,6 +23,8 @@ This detailed and comprehensive description of the game's systems, components, a
 - `add_color(color: str)`: Add a color to the color progression.
 - `get_collected_items() -> List[Item]`: Get the list of collected items.
 - `add_item(item: Item)`: Add an item to the list of collected items.
+- `save_game(filepath: str)`: Save all the states to a json file
+- `load_game(filepath: str)`: Load the states from a json file and load states to the other managers
 
 ### 2. BaseLevel
 
@@ -45,28 +48,32 @@ This detailed and comprehensive description of the game's systems, components, a
 - `render()`: Render the level, including entities and UI elements.
 - `unload()`: Unload the level resources and clean up the game state.
 
-### 3. SceneManager
+### 3. LevelManager
 
-**Description**: A class responsible for managing the active scene and handling transitions between scenes, such as loading and unloading levels, menus, or other game states.
+**Description**: A class responsible for managing the active level and handling transitions between levels, such as loading and unloading levels, menus, or other game states.
 
 **Functionalities**:
 
-- Manage the active scene
-- Handle transitions between scenes
-- Load and unload scenes
+- Manage the active level
+- Handle transitions between levels
+- Load and unload levels
+- Store all level states
 
 **Expected Classes / Instances / Entities**:
 
-- `SceneManager` (Class)
+- `LevelManager` (Class)
+- `LevelState` (Class)
 
 **APIs / Signatures / Interfaces**:
 
-- `__init__()`: Initialize the scene manager.
-- `get_active_scene() -> BaseLevel`: Get the currently active scene.
-- `set_active_scene(scene: BaseLevel)`: Set the active scene.
-- `load_scene(scene: BaseLevel)`: Load a scene, unloading the currently active scene if necessary.
-- `update(dt: float)`: Update the active scene based on the elapsed time since the last frame.
-- `render()`: Render the active scene, including entities and UI elements.
+- `__init__()`: Initialize the level manager.
+- `get_active_level() -> BaseLevel`: Get the currently active level.
+- `set_active_level(level: BaseLevel)`: Set the active level.
+- `load_level(level: BaseLevel)`: Load a level, unloading the currently active level if necessary.
+- `update(dt: float)`: Update the active level based on the elapsed time since the last frame.
+- `render()`: Render the active level, including entities and UI elements.
+- `get_level_states() -> Dict[str, Dict]`: Get all level states. 
+- `load_level_states(Dict[str, Dict])`: Load all level states
 
 ### 4. Display Manager
 
@@ -223,7 +230,7 @@ Before the game starts:
 
 1. Test the initialization of the `GameState` singleton and ensure that it stores global state information correctly.
 2. Test the creation and initialization of level instances, ensuring that they inherit from the `BaseLevel` class and implement the required methods.
-3. Test the `SceneManager` by loading and unloading scenes, and verify that the active scene is updated correctly.
+3. Test the `LevelManager` by loading and unloading levels, and verify that the active level is updated correctly.
 
 In-game:
 
@@ -252,7 +259,7 @@ By following these guidelines and test cases, the coder can implement the game's
 
 1. Verify that all game objects, including the protagonist, NPCs, platforms, and walls, are rendered correctly.
 2. Verify that the background is rendered and visually separated from the foreground elements.
-3. Verify that UI elements, such as the HUD, are rendered on top of the game scene.
+3. Verify that UI elements, such as the HUD, are rendered on top of the game level.
 
 **Testing**:
 
