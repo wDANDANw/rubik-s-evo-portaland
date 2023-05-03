@@ -54,7 +54,7 @@ class LevelManager:
         self.load_all_levels()
 
         # Set the first level to be level 0
-        self.load_level(1)
+        self.load_level(0)
        
 
     def get_current_level_id(self) -> int:

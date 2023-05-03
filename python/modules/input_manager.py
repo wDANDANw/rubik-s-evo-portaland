@@ -59,5 +59,8 @@ class InputManager:
         # elif pyxel.btn(pyxel.KEY_X) or pyxel.btn(pyxel.KEY_M) or \
         #     pyxel.btn(pyxel.GAMEPAD1_BUTTON_B):
         #     self.inputs.append(self.CANCEL)
-        
+    
+        return self
+    
+    def get_inputs(self):
         return self.inputs

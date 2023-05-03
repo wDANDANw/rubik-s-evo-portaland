@@ -21,6 +21,7 @@ class BaseLevel:
         self.level_id = level_id
         self.level_data = level_data
         self.entities = []
+        self.systems = []
 
     @classmethod
     def __internal_new__(cls):
@@ -84,3 +85,9 @@ class BaseLevel:
         Remove an entity from the level's list of entities.
         """
         self.entities.remove(entity)
+
+    def add_system(self, system):
+        """
+        Add a system to the level's list of systems.
+        """
+        self.systems.append(system)
