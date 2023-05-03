@@ -3,9 +3,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Reference repos
-reference_repos/
-
 # C extensions
 *.so
 
