@@ -37,9 +37,19 @@ class App:
     def draw(self):
         pyxel.cls(0)
         
+        TITLE_OFFSET_X = 40
+        TITLE_OFFSET_Y = 15
+        CLICK_TO_START_TEXT = "Click to Start"
+        CLICK_TO_START_OFFSET_X = 26.5
+        CLICK_TO_START_OFFSET_Y = 0
+
         if not self.started:
-            pyxel.text(SCREEN_HEIGHT/2-3, SCREEN_WIDTH/2 - 50, GAME_TITLE, 15)
-            pyxel.text(SCREEN_WIDTH/2-30, SCREEN_HEIGHT/2+30, "Click to Start", pyxel.frame_count % 16)
+            pyxel.text(SCREEN_WIDTH/2 - TITLE_OFFSET_X, SCREEN_HEIGHT/2 - TITLE_OFFSET_Y, GAME_TITLE, 15)
+            
+            pyxel.text(SCREEN_WIDTH/2-CLICK_TO_START_OFFSET_X, 
+                       SCREEN_HEIGHT/2+CLICK_TO_START_OFFSET_Y, 
+                       CLICK_TO_START_TEXT, 
+                       pyxel.frame_count % 16)
         else:
             self.game.render()
         

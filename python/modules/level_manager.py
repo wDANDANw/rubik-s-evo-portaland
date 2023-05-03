@@ -2,10 +2,22 @@
 
 from typing import Dict, Any, Type
 from .base_level import BaseLevel
+from .stage_level import StageLevel
 
 import os, importlib, inspect
 
 LEVEL_DIRECTORY = "../levels/"
+factory_levels = [BaseLevel, StageLevel]
+def is_factory_level(obj):
+    
+    answer = False
+
+    for level in factory_levels:
+        if obj is level:
+            answer = True
+            break
+    
+    return answer
 
 class LevelManager:
 
@@ -42,7 +54,7 @@ class LevelManager:
         self.load_all_levels()
 
         # Set the first level to be level 0
-        self.load_level(0)
+        self.load_level(1)
        
 
     def get_current_level_id(self) -> int:
@@ -119,7 +131,8 @@ class LevelManager:
 
                 # Inspect the module to find Level_X classes
                 for name, obj in inspect.getmembers(module):
-                    if inspect.isclass(obj) and issubclass(obj, BaseLevel) and obj is not BaseLevel:
+
+                    if inspect.isclass(obj) and issubclass(obj, BaseLevel) and not is_factory_level(obj):
                         # Get the level number from the class name
                         level_number = int(name.split("_")[-1])
 
@@ -128,5 +141,7 @@ class LevelManager:
 
         assert len(levels) > 0, "No levels found"
         self.levels = levels
+
+
 
 
