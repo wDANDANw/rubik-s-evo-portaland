@@ -10,6 +10,7 @@ Regarding the game - the majority of the system & code are generated and tuned (
 Regarding assets - some assets are borrowed, some are generated. 
 
 ### Folder Structure
+```
 ├─docs
 │  ├─project_definition: GDD & Concept Doc (Chat with Intelligent Assistant [Another Ongoing Project] & Created)
 │  └─workers: Some typical examples of how I generated assets / code / etc.
@@ -29,6 +30,7 @@ Regarding assets - some assets are borrowed, some are generated.
 │  └─__pycache__
 ├─tools: asset conversion tools
 ├─wasm: wasm host 
+```
 
 ### How to play
 https://wdandanw.github.io/rubik-s-evo-portaland/wasm/game.html -> Play online
