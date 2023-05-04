@@ -33,7 +33,7 @@ Regarding assets - some assets are borrowed, some are generated.
 ```
 
 ### How to play
-https://wdandanw.github.io/rubik-s-evo-portaland/wasm/game.html -> Play online
+https://wdandanw.github.io/rubik-s-evo-portaland/wasm/game.html -> Play online   
 https://wdandanw.github.io/rubik-s-evo-portaland/wasm/editor.html -> Edit assets online
 
 Or:
